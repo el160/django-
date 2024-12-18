@@ -6,10 +6,11 @@ from django.template import loader
 
 
 
-# def players(request):
-#     #template = loader.get_template('first.html')
-#    return render(request, 'players/first.html')
-
 def players(request):
-    print("Hello World")
-    return HttpResponse("Hello world!")
+    template = loader.get_template('first.html')
+    return render(request, 'first.html')
+    #return HttpResponse(template.render())
+
+# def players(request):
+#     print("Hello World")
+#     return HttpResponse("Hello world!")
