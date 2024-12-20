@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+<title>My club list of players</title>
+{% endblock %}
+
+{% block content %}
+<h1>Players</h1>
+{% if myplayers %}
+  <ul>
+    {% for x in myplayers %}
+      <li><a href="{% url 'details' x.id %}">{{ x.firstname }} {{ x.lastname }} {{ x.age }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No players found.</p>
+{% endif %}
+{% endblock %}

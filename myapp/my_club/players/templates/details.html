@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ myplayer.firstname }} {{ myplayer.lastname }} {{myplayer.age}}
+{% endblock %}
+
+{% block content %}
+<h1>{{ myplayer.firstname }} {{ myplayer.lastname }} (Age: {{ myplayer.age }})</h1>
+
+<p>Phone: {{ myplayer.phone|default:"Not available" }}</p>
+<p>Member since: {{ myplayer.date_joined|date:"F d, Y"|default:"Not available" }}</p>
+
+<p>Back to <a href="{% url 'players' %}">Players</a></p>
+{% endblock %}
