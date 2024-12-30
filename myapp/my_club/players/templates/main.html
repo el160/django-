@@ -2,16 +2,18 @@
 {% load static %}
 
 {% block title %}
-<link rel="stylesheet" href="{% static 'myglobal.css' %}">
-My  Club
+{% comment %} <link rel="stylesheet" href="{% static 'myglobal.css' %}"> {% endcomment %}
+MY CLUB
 {% endblock %}
 
 
 {% block content %}
+<div class="main">
 <h1>My  Club</h1>
 
 <h3>Players</h3>
 
 <p>Check out all our <a href="players/">players</a></p>
+</div>
 
 {% endblock %}

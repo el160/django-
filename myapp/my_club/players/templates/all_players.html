@@ -3,17 +3,19 @@
 {% load static %}
 {% block title %}
 <title>My club list of players</title>
-<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'mystyles.css' %}"> {% endcomment %}
 {% endblock %}
 
 {% block content %}
+<div class='mycard'>
 <h1>Players</h1>
 {% if myplayers %}
   <ul>
     {% for x in myplayers %}
-      <li><a href="{% url 'details' x.id %}">{{ x.firstname }} {{ x.lastname }} {{ x.age }}</a></li>
+    <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }} {{x.age}}</li>
     {% endfor %}
   </ul>
+</div>
 {% else %}
   <p>No players found.</p>
 {% endif %}

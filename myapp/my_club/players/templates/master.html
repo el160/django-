@@ -2,11 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  {% block title %}
-  <link rel="stylesheet" href="{% static 'myglobal.css' %}">
-  {% endblock %}
+  <link rel="stylesheet" href="{% static 'mystyles.css' %}">
+  {% block title %}{% endblock %}
 </head>
 <body>
-  {% block content %}{% endblock %}
+  {% block content %}
+  <div class="topnav">
+    <a href="/">HOME</a> |
+    <a href="/players">THE PLAYERS</a>
+  </div>
+  {% endblock %}
 </body>
 </html>

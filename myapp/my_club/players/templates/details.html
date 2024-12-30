@@ -3,14 +3,15 @@
 
 {% block title %}
 Details about {{ myplayer.firstname }} {{ myplayer.lastname }} {{myplayer.age}}
-<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+{% comment %} <link rel="stylesheet" href="{% static 'myglobal.css' %}"> {% endcomment %}
 {% endblock %}
 
 {% block content %}
+<div class="mycard">
 <h1>{{ myplayer.firstname }} {{ myplayer.lastname }} (Age: {{ myplayer.age }})</h1>
 
 <p>Phone: {{ myplayer.phone|default:"Not available" }}</p>
-<p>Member since: {{ myplayer.date_joined|date:"F d, Y"|default:"Not available" }}</p>
-
-<p>Back to <a href="{% url 'players' %}">Players</a></p>
+<p>Player since: {{ myplayer.date_joined|date:"F d, Y"|default:"Not available" }}</p>
+</div>
+{% comment %} <p>Back to <a href="{% url 'players' %}">Players</a></p> {% endcomment %}
 {% endblock %}
